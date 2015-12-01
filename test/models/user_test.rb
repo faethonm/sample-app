@@ -36,8 +36,7 @@ class UserTest < ActiveSupport::TestCase
     mixed_email = 'Foo@ExAMPle.CoM'
     @user.email = mixed_email
     @user.save!
-    new_email = @user.reload.email
-    assert_equal  mixed_email.downcase!, @user.reload.email
+    assert_equal mixed_email.downcase!, @user.reload.email
   end
 
   test 'email validation should accept valid addresses' do
